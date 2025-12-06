@@ -97,7 +97,7 @@ export const ActivityLogPage = () => {
       </Grid>
 
       <Card>
-        <CardContent sx={{ p: 3 }}>
+        <CardContent sx={{ p: { xs: 2, sm: 3 } }}>
           <Stack spacing={2}>
             {filteredActivities.map((activity, index) => (
               <Box key={activity.id}>
@@ -140,9 +140,10 @@ export const ActivityLogPage = () => {
                   </Stack>
                   <Box sx={{ flexGrow: 1, pb: 2 }}>
                     <Stack
-                      direction="row"
+                      direction={{ xs: 'column', sm: 'row' }}
                       justifyContent="space-between"
-                      alignItems="flex-start"
+                      alignItems={{ xs: 'flex-start', sm: 'flex-start' }}
+                      spacing={{ xs: 1, sm: 0 }}
                       width="100%"
                     >
                       <Box>
@@ -161,7 +162,7 @@ export const ActivityLogPage = () => {
                           </Typography>
                         )}
                       </Box>
-                      <Stack direction="row" alignItems="center" spacing={1}>
+                      <Stack direction="row" alignItems="center" spacing={1} flexWrap="wrap" useFlexGap>
                         <Chip
                           label={activity.action}
                           color={

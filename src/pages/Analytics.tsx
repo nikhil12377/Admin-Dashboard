@@ -44,7 +44,7 @@ export const Analytics = () => {
         {kpiData.map((kpi) => (
           <Grid size={{ xs: 12, sm: 6, md: 3 }} key={kpi.label}>
             <Card>
-              <CardContent sx={{ p: 3 }}>
+              <CardContent sx={{ p: { xs: 2, sm: 3 } }}>
                 <Typography variant="body2" color="text.secondary" mb={1}>
                   {kpi.label}
                 </Typography>

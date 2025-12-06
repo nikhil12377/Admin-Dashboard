@@ -92,7 +92,7 @@ export const TopNav = () => {
           edge="start"
           color="inherit"
           aria-label="open drawer"
-          sx={{ mr: 2 }}
+          sx={{ mr: { xs: 1, sm: 2 } }}
           onClick={toggleSidebar}
         >
           <MenuIcon />
@@ -110,7 +110,7 @@ export const TopNav = () => {
           </Search>
         </Box>
 
-        <Stack direction="row" spacing={1} alignItems="center">
+        <Stack direction="row" spacing={{ xs: 0.5, sm: 1 }} alignItems="center">
           <IconButton onClick={toggleMode} color="inherit">
             {mode === 'dark' ? <Brightness7Icon size={20} /> : <Brightness4Icon size={20} />}
           </IconButton>

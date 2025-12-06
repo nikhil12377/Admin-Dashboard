@@ -19,8 +19,11 @@ export const MainLayout = ({ children }: MainLayoutProps) => {
         component="main"
         sx={{
           flexGrow: 1,
-          p: 3,
+          p: { xs: 2, sm: 3 },
           mt: '64px',
+          width: '100%',
+          maxWidth: '100%',
+          overflow: 'hidden',
         }}
       >
         {children}

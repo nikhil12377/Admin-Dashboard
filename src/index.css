@@ -58,6 +58,10 @@
   border-color: hsl(var(--border));
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -68,6 +72,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: hsl(var(--background));
   color: hsl(var(--foreground));
+  overflow-x: hidden;
 }
 
 code {
@@ -78,4 +83,21 @@ code {
 #root {
   width: 100%;
   min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Mobile touch optimization */
+@media (max-width: 600px) {
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  /* Ensure minimum touch target size */
+  button,
+  a,
+  input,
+  select,
+  textarea {
+    min-height: 44px;
+  }
 }

@@ -1,4 +1,4 @@
-import { Card, CardContent, Typography, Box, Stack, useTheme } from '@mui/material';
+import { Card, CardContent, Typography, Box, Stack, useTheme, useMediaQuery } from '@mui/material';
 import { motion } from 'framer-motion';
 import { formatNumber, formatCurrency } from '../utils/formatNumber';
 
@@ -13,6 +13,7 @@ interface MetricCardProps {
 export const MetricCard = ({ title, value, change, format = 'number', icon }: MetricCardProps) => {
   const formattedValue = format === 'currency' ? formatCurrency(value) : formatNumber(value);
   const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
   return (
     <motion.div
@@ -30,7 +31,7 @@ export const MetricCard = ({ title, value, change, format = 'number', icon }: Me
           },
         }}
       >
-        <CardContent sx={{ p: 3 }}>
+        <CardContent sx={{ p: { xs: 2, sm: 3 } }}>
           <Stack direction="row" justifyContent="space-between" alignItems="flex-start" mb={2}>
             <Typography variant="body2" color="text.secondary" fontWeight={500}>
               {title}
@@ -41,7 +42,7 @@ export const MetricCard = ({ title, value, change, format = 'number', icon }: Me
               </Box>
             )}
           </Stack>
-          <Typography variant="h4" component="div" fontWeight="bold" mb={1}>
+          <Typography variant={isMobile ? 'h5' : 'h4'} component="div" fontWeight="bold" mb={1}>
             {formattedValue}
           </Typography>
           {change !== undefined && (

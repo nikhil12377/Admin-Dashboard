@@ -143,13 +143,15 @@ export const Users = () => {
 
       <Card>
         <CardContent sx={{ p: 0 }}>
-          <Table
-            rowSelection={rowSelection}
-            columns={columns}
-            dataSource={filteredUsers}
-            rowKey="id"
-            pagination={{ pageSize: 10 }}
-          />
+          <Box sx={{ overflowX: 'auto' }}>
+            <Table
+              rowSelection={rowSelection}
+              columns={columns}
+              dataSource={filteredUsers}
+              rowKey="id"
+              pagination={{ pageSize: 10 }}
+            />
+          </Box>
         </CardContent>
       </Card>
     </Box>

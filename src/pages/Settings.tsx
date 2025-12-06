@@ -118,7 +118,14 @@ export const Settings = () => {
       </Typography>
 
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-        <Tabs value={tabValue} onChange={handleTabChange} aria-label="settings tabs">
+        <Tabs 
+          value={tabValue} 
+          onChange={handleTabChange} 
+          aria-label="settings tabs"
+          variant="scrollable"
+          scrollButtons="auto"
+          allowScrollButtonsMobile
+        >
           <Tab icon={<SettingsIcon size={16} />} iconPosition="start" label="General" />
           <Tab icon={<NotificationsIcon size={16} />} iconPosition="start" label="Notifications" />
           <Tab icon={<IntegrationIcon size={16} />} iconPosition="start" label="Integrations" />
